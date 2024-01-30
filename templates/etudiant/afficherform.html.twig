@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Affichage Étudiant{% endblock %}
+
+{% block body %}
+<div class="container">
+<div class="student-card">
+    <div class="student-photo">
+        <!-- Insérez la photo de l'étudiant ici -->
+        <img src="/images/tete.png" alt="Photo de l'étudiant">
+    </div>
+    <div class="student-info">
+    <h1>Étudiant</h1>
+    <p>Nom: {{ etudiant.nom }}</p>
+    <p>Prénom: {{ etudiant.prenom }}</p>
+    <p>Classe: {{ etudiant.classe }}</p>
+        </div>
+</div>
+</div>
+{% endblock %}

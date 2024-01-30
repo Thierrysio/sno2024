@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Affichage Étudiant{% endblock %}
+
+{% block body %}
+    <h1>Étudiant</h1>
+    <p>Nom: {{ etudiant.nom }}</p>
+    <p>Prénom: {{ etudiant.prenom }}</p>
+    <p>Classe: {{ etudiant.classe }}</p>
+{% endblock %}
