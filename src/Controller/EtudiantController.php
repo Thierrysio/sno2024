@@ -22,6 +22,12 @@ class EtudiantController extends AbstractController
         return $this->render('etudiant/tableau.html.twig');
     }
 
+    #[Route('/etudiant/tableau2', name: 'app_etudiant_tableau2')]
+    public function tableau2(): Response
+    {
+        return $this->render('etudiant/tableau2.html.twig');
+    }
+
     #[Route('/etudiant/{id}', name: 'etudiant_afficher')]
 
     public function afficher(Etudiant $etudiant): Response
