@@ -1,8 +1,53 @@
-{% extends 'base.html.twig' %}
+<style>
 
-{% block title %}Affichage Étudiant{% endblock %}
+body,html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color: rgb(0, 0, 0); /* Fond de la page en blanc */
+}
 
-{% block body %}
+.student-card {
+    background-image: url('/images/fond.jpg');
+    border: 10px solid #9b3535;
+    border-radius: 15px;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    padding: 10px;
+    color: white; /* Ajout de la couleur du texte */
+
+}
+
+.student-photo {
+    flex: 30%;
+    padding: 5px;
+}
+
+.student-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.student-info {
+    flex: 70%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    /* Ajoutez le style souhaité pour le conteneur ici */
+    padding: 20px;
+   
+}
+
+</style>
 <div class="container">
 <div class="student-card">
     <div class="student-photo">
@@ -17,4 +62,4 @@
         </div>
 </div>
 </div>
-{% endblock %}
+

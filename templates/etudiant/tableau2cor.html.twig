@@ -4,44 +4,43 @@
     <meta charset="UTF-8">
     <title>Gestion des notes</title>
     <style>
-                body {
+        body {
             font-family: Arial, sans-serif; /* Utilisation d'une police plus professionnelle */
             display: flex;
             justify-content: center; /* Centre le contenu horizontalement */
             align-items: center; /* Centre le contenu verticalement */
             height: 100vh; /* Utilise toute la hauteur de la fenêtre */
             margin: 0; /* Supprime les marges par défaut */
-        }    
-                table {
+        }
+        table {
             border-collapse: collapse; /* Supprime l'espacement entre les bordures des cellules */
             margin: auto; /* Centre le tableau horizontalement */
             width: 80%; /* Largeur du tableau */
         }
-                th, td {
+        th, td {
             border: 1px solid #ddd; /* Couleur de bordure plus douce */
             text-align: left; /* Alignement du texte */
             padding: 8px; /* Espacement autour du contenu dans les cellules */
         }
-                th {
+        th {
             background-color: #f2f2f2; /* Couleur de fond pour les entêtes */
             color: black; /* Couleur du texte pour les entêtes */
         }
-                tr:nth-child(even) {background-color: #f9f9f9;} /* Couleur de fond alternée pour les lignes */
-            tr:hover {background-color: #ddd;} /* Couleur de fond au survol */
+        tr:nth-child(even) {background-color: #f9f9f9;} /* Couleur de fond alternée pour les lignes */
+        tr:hover {background-color: #ddd;} /* Couleur de fond au survol */
         caption {
             margin-bottom: 15px; /* Espacement sous le titre */
             font-size: 24px; /* Taille du titre */
             font-weight: bold; /* Poids de la police pour le titre */
         }
-
-                td > table {
+        /* Styles spécifiques pour les tableaux internes */
+        td > table {
             width: 100%; /* Les tableaux internes prennent toute la largeur de la cellule */
             border: none; /* Pas de bordure pour les tableaux internes */
         }
         td > table td {
             border: none; /* Pas de bordure pour les cellules des tableaux internes */
             text-align: center; /* Centre le texte dans les cellules internes */
-            color: red;
         }
     </style>
 </head>
@@ -60,61 +59,49 @@
         <tbody>
             <tr>
                 <td>Eric Jullo</td>
-                <td>12</td> <!-- Notes pour Eric Jullo -->
-                <td>11</td>
-                <td>20</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>
                     <table>
-                        <tr><td>12</td></tr> <!-- Note de théorie -->
-                        <tr><td>12</td></tr> <!-- Note de pratique -->
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td>Eric Jullo</td>
-                <td>12</td> <!-- Notes pour Eric Jullo -->
-                <td>11</td>
-                <td>20</td>
-                <td>
-                    <table>
-                        <tr><td>12</td></tr> <!-- Note de théorie -->
-                        <tr><td>12</td></tr> <!-- Note de pratique -->
+                        <tr><td></td></tr>
+                        <tr><td></td></tr>
                     </table>
                 </td>
             </tr>
             <tr>
                 <td>Eline Thirou</td>
-                <td>09</td> <!-- Notes pour Eline Thirou -->
-                <td>12</td>
-                <td>14</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>
-                    <table >
-                        <tr><td>12</td></tr> <!-- Note de théorie -->
-                        <tr><td>15</td></tr> <!-- Note de pratique -->
+                    <table>
+                        <tr><td></td></tr>
+                        <tr><td></td></tr>
                     </table>
                 </td>
             </tr>
             <tr>
                 <td>Marc Mouilon</td>
-                <td>12</td> <!-- Notes pour Marc Mouilon -->
-                <td>15</td>
-                <td>18</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>
                     <table>
-                        <tr><td>16</td></tr> <!-- Note de théorie -->
-                        <tr><td>16</td></tr> <!-- Note de pratique -->
+                        <tr><td></td></tr>
+                        <tr><td></td></tr>
                     </table>
                 </td>
             </tr>
             <tr>
                 <td>John Doe</td>
-                <td>05</td> <!-- Notes pour John Doe -->
-                <td>05</td>
-                <td>12</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>
                     <table>
-                        <tr><td>05</td></tr> <!-- Note de théorie -->
-                        <tr><td>09</td></tr> <!-- Note de pratique -->
+                        <tr><td></td></tr>
+                        <tr><td></td></tr>
                     </table>
                 </td>
             </tr>
