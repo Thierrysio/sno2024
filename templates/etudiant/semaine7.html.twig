@@ -1,6 +1,95 @@
 
     <style>
+        body {
+            font-family: 'Arial', sans-serif; /* Exemple de police moderne */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .titre {
+            font-size: 35px;
+            margin-bottom: 20px; /* Espacement entre le titre et le tableau */
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid black; /* Bordure globale */
+            padding: 10px;
+        }
+        .flex-item {
+            width: calc(33.333% - 20px); /* Ajustement pour l'espacement */
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative; /* Pour positionner le texte correctement */
+            margin: 0 10px; /* Espacement entre les éléments */
+        }
+        .flex-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Pour s'assurer que les images couvrent bien le bloc */
+            position: absolute;
+            z-index: 1;
+        }
+        .flex-item p {
+            z-index: 2; /* Pour s'assurer que le texte est au-dessus de l'image */
+            color: white; /* Couleur du texte */
+            position: relative;
+        }
 
+        .circle-image-container {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 50%; /* Rend le conteneur circulaire */
+            overflow: hidden; /* Empêche l'image de dépasser les bordures du cercle */
+            margin: 20px auto; /* Centre le cercle et ajoute un espace depuis le conteneur précédent */
+            animation: spin 4s linear infinite; /* Applique l'animation */
+        }
+        .circle-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* S'assure que l'image couvre le cercle */
+        }
+        @keyframes spin {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+                .carousel-container {
+            margin-top: 20px;
+            width: 100%;
+            overflow: hidden; /* Cache les images hors du cadre visible */
+            position: relative;
+        }
+        .carousel-slide {
+            display: flex; /* Positionne les images en ligne */
+            transition: transform 0.5s ease-in-out; /* Anime le passage d'une image à l'autre */
+        }
+        .carousel-slide img {
+            max-width: 100%; /* Assure que l'image ne dépasse pas du conteneur */
+            display: block; /* Évite les espaces indésirables entre les images */
+            margin: 0 auto; /* Centre les images */
+        }
+
+         table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .ca-inferieur {
+            background-color: #ffcccc; /* Rouge clair */
+        }
+        .ca-superieur {
+            background-color: #ccffcc; /* Vert clair */
+        }
     </style>
 </head>
 <body>
