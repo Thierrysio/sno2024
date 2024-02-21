@@ -34,33 +34,9 @@ class EtudiantController extends AbstractController
         return $this->render('etudiant/tableau2.html.twig');
     }
 
-    #[Route('/etudiant/{id}', name: 'etudiant_afficher')]
-
-    public function afficher(Etudiant $etudiant): Response
+    #[Route('/etudiant/semaine7', name: 'app_etudiant_semaine7')]
+    public function semaine7(): Response
     {
-
-        
-        if (!$etudiant) {
-            throw $this->createNotFoundException('Aucun étudiant trouvé pour l\'id '.$id);
-        }
-        
-        return $this->render('/etudiant/afficher.html.twig', [
-            'etudiant' => $etudiant,
-        ]);
-    }
-
-    #[Route('/etudiant/forme/{id}', name: 'etudiant_afficher-forme')]
-
-    public function afficherforme(Etudiant $etudiant): Response
-    {
-
-        
-        if (!$etudiant) {
-            throw $this->createNotFoundException('Aucun étudiant trouvé pour l\'id '.$id);
-        }
-        
-        return $this->render('/etudiant/afficherform.html.twig', [
-            'etudiant' => $etudiant,
-        ]);
+        return $this->render('etudiant/semaine7.html.twig');
     }
 }

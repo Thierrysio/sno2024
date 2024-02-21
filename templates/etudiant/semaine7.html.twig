@@ -1,0 +1,87 @@
+
+    <style>
+
+    </style>
+</head>
+<body>
+
+<div class="titre">La page du mercredi</div>
+<div class="flex-container">
+    <div class="flex-item">
+        <img src="image1.jpg" alt="Image 1">
+        <p>Texte 1</p>
+    </div>
+    <div class="flex-item">
+        <img src="image2.jpg" alt="Image 2">
+        <p>Texte 2</p>
+    </div>
+    <div class="flex-item">
+        <img src="image3.jpg" alt="Image 3">
+        <p>Texte 3</p>
+    </div>
+</div>
+<div class="circle-image-container">
+    <img src="votreImage.jpg" alt="Image Circulaire">
+</div>
+
+ <div class="carousel-container">
+        <div class="carousel-slide">
+            <img src="image1.jpg" alt="Image 1">
+            <img src="image2.jpg" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+            <img src="image4.jpg" alt="Image 4">
+            <img src="image5.jpg" alt="Image 5">
+        </div>
+
+    <h2>C.A. du semestre</h2>
+<table>
+    <tr>
+        <th>Commercial / Pays</th>
+        <th>France</th>
+        <th>Allemagne</th>
+        <th>Italie</th>
+        <th>Espagne</th>
+        <th>Portugal</th>
+    </tr>
+    <tr>
+        <td>Jean Dupont</td>
+        <td class="ca-inferieur">9,000</td>
+        <td>12,000</td>
+        <td>15,000</td>
+        <td class="ca-superieur">105,000</td>
+        <td>20,000</td>
+    </tr>
+    <tr>
+        <td>Marc Durand</td>
+        <td>13,000</td>
+        <td class="ca-inferieur">8,000</td>
+        <td class="ca-superieur">110,000</td>
+        <td>22,000</td>
+        <td>18,000</td>
+    </tr>
+    <!-- Ajoutez d'autres lignes pour les commerciaux ici -->
+    <tr>
+        <td><strong>Total</strong></td>
+        <td>22,000</td>
+        <td>20,000</td>
+        <td>125,000</td>
+        <td>127,000</td>
+        <td>38,000</td>
+    </tr>
+</table>
+ <script>
+        const slide = document.querySelector('.carousel-slide');
+        let counter = 1;
+        const size = slide.clientWidth;
+        setInterval(() => {
+            if(counter < 5) {
+                slide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+                counter++;
+            } else {
+                slide.style.transform = 'translateX(0px)';
+                counter = 1;
+            }
+        }, 3000); // Change l'image toutes les 3 secondes
+    </script>  
+</body>
+</html>
