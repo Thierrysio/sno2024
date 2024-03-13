@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Montant des Achats de l'Année 2023</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<style>body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #999;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+tfoot {
+    font-weight: bold;
+    background-color: #e8e8e8;
+}
+
+.highest {
+    background-color: #4CAF50; /* Vert */
+    color: white;
+}
+
+.lowest {
+    background-color: #F44336; /* Rouge */
+    color: white;
+}
+ </style>
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Calculez le total pour chaque ligne
+    const lignes = document.querySelectorAll("#montantAchats tbody tr");
+
+    lignes.forEach(ligne => {
+        let total = 0;
+        const montants = ligne.querySelectorAll(".montant");
+        montants.forEach(montant => {
+            total += parseInt(montant.textContent) || 0;
+        });
+
+        // Mettez à jour la cellule de total de cette ligne
+        // Supposons que la cellule de total est toujours la dernière de la ligne
+        ligne.querySelector("td:last-child").textContent = total.toLocaleString("fr-FR");
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const table = document.querySelector("#montantAchats");
+    const rows = table.querySelectorAll("tbody tr");
+    const footer = table.querySelector("tfoot tr");
+
+    // Nombre de mois (colonnes de montant)
+    const nbMois = 12;
+
+    // Initialiser un tableau pour stocker les totaux par colonne
+    let totals = new Array(nbMois).fill(0);
+
+    // Calculer les totaux par colonne
+    rows.forEach(row => {
+        row.querySelectorAll(".montant").forEach((cell, index) => {
+            totals[index] += parseInt(cell.textContent) || 0;
+        });
+    });
+
+    // Afficher les totaux dans le tfoot
+    totals.forEach((total, index) => {
+        // Supposons que les cellules de total dans le tfoot sont dans l'ordre
+        footer.children[index + 1].textContent = total.toLocaleString("fr-FR"); // +1 pour ignorer la cellule "Total"
+    });
+
+    // Calculer et afficher le grand total
+    const grandTotal = totals.reduce((acc, curr) => acc + curr, 0);
+    document.getElementById("grandTotal").textContent = grandTotal.toLocaleString("fr-FR");
+});
+</script>
+
+<h1>Montant des Achats de l'Année 2023</h1>
+<table id="montantAchats">
+    <thead>
+        <tr>
+            <th>Commerciaux</th>
+            <th>Janvier</th>
+            <th>Février</th>
+            <th>Mars</th>
+            <th>Avril</th>
+            <th>Mai</th>
+            <th>Juin</th>
+            <th>Juillet</th>
+            <th>Août</th>
+            <th>Septembre</th>
+            <th>Octobre</th>
+            <th>Novembre</th>
+            <th>Décembre</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Exemple pour un commercial, répétez pour les autres -->
+        <tr>
+            <td>Jean Dupont</td>
+            <td class="montant">25000</td>
+            <td class="montant">45000</td>
+            <td class="montant">32000</td>
+            <td class="montant">60000</td>
+            <td class="montant">75000</td>
+            <td class="montant">30000</td>
+            <td class="montant">50000</td>
+            <td class="montant">70000</td>
+            <td class="montant">65000</td>
+            <td class="montant">60000</td>
+            <td class="montant">55000</td>
+            <td class="montant">480000</td>
+            <td id="totalJean">0</td>
+        </tr>
+         <tr>
+            <td>John Doe</td>
+            <td class="montant">65000</td>
+            <td class="montant">45000</td>
+            <td class="montant">32000</td>
+            <td class="montant">60000</td>
+            <td class="montant">25000</td>
+            <td class="montant">30000</td>
+            <td class="montant">50000</td>
+            <td class="montant">70000</td>
+            <td class="montant">65000</td>
+            <td class="montant">60000</td>
+            <td class="montant">55000</td>
+            <td class="montant">480000</td>
+            <td id="totalJean">0</td>
+        </tr>
+        <!-- Ajoutez ici les autres commerciaux -->
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Total</td>
+            <td id="totalJanvier">0</td>
+            <td id="totalFevrier">0</td>
+            <td id="totalMars">0</td>
+            <td id="totalAvril">0</td>
+            <td id="totalMai">0</td>
+            <td id="totalJuin">0</td>
+            <td id="totalJuillet">0</td>
+            <td id="totalAout">0</td>
+            <td id="totalSeptembre">0</td>
+            <td id="totalOctobre">0</td>
+            <td id="totalNovembre">0</td>
+            <td id="totalDecembre">0</td>
+             <td id="grandTotal">0</td>
+            
+        </tr>
+    </tfoot>
+</table>
+</body>
+</html>

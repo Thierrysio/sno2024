@@ -6,6 +6,54 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Calculez le total pour chaque ligne
+    const lignes = document.querySelectorAll("#montantAchats tbody tr");
+
+    lignes.forEach(ligne => {
+        let total = 0;
+        const montants = ligne.querySelectorAll(".montant");
+        montants.forEach(montant => {
+            total += parseInt(montant.textContent) || 0;
+        });
+
+        // Mettez à jour la cellule de total de cette ligne
+        // Supposons que la cellule de total est toujours la dernière de la ligne
+        ligne.querySelector("td:last-child").textContent = total.toLocaleString("fr-FR");
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const table = document.querySelector("#montantAchats");
+    const rows = table.querySelectorAll("tbody tr");
+    const footer = table.querySelector("tfoot tr");
+
+    // Nombre de mois (colonnes de montant)
+    const nbMois = 12;
+
+    // Initialiser un tableau pour stocker les totaux par colonne
+    let totals = new Array(nbMois).fill(0);
+
+    // Calculer les totaux par colonne
+    rows.forEach(row => {
+        row.querySelectorAll(".montant").forEach((cell, index) => {
+            totals[index] += parseInt(cell.textContent) || 0;
+        });
+    });
+
+    // Afficher les totaux dans le tfoot
+    totals.forEach((total, index) => {
+        // Supposons que les cellules de total dans le tfoot sont dans l'ordre
+        footer.children[index + 1].textContent = total.toLocaleString("fr-FR"); // +1 pour ignorer la cellule "Total"
+    });
+
+    // Calculer et afficher le grand total
+    const grandTotal = totals.reduce((acc, curr) => acc + curr, 0);
+    document.getElementById("grandTotal").textContent = grandTotal.toLocaleString("fr-FR");
+});
+</script>
 <h1>Montant des Achats de l'Année 2023</h1>
 <table id="montantAchats">
     <thead>
